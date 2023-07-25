@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 
 export const LeftSide = styled.div `
 
@@ -16,10 +16,7 @@ export const RightSide = styled.div `
 
 & {
     
-   font-size: 30px; 
-   color: #2629e9;
-   text-align: center; 
-   font-family: sans-serif;
+
    border-radius: 1%;
     margin-top: 20px;
     margin-left: 350px;
@@ -46,7 +43,7 @@ export const Wrapper = styled.div `
  export const Menu = styled.div `
     color: white;
     
-    width: 10%;
+    width: 7%;
     height: 80%;
     background-color: #241b72;
     position: fixed;

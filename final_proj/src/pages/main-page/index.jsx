@@ -4,6 +4,10 @@ import { LeftSide } from './index.style';
 import { Wrapper } from './index.style';
 import { Menu } from './index.style';
 import { Btn } from '../../components/buttons/index.style';
+import { Input } from '../../components/input/index.style';
+import { AppName } from '../../components/appName';
+import { CategoryStyle } from '../../components/categoryList/index.style';
+
 
 
 
@@ -21,7 +25,9 @@ export const MainPage = () => {
          </Menu>
         
         <RightSide>
-             Your budget planner
+             <AppName/>
+             <Input placeholder='Add new cost'/>
+             <CategoryStyle/>  
         </RightSide>
         
        

@@ -13,12 +13,14 @@ export const Btn = styled.button`
   box-sizing: border-box;
   color: #FFFFFF;
   font-family: Phantomsans, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   justify-content: center;
   min-width: 140px;
   padding: 15px 15px;
   cursor: pointer;
   
-  
+  &:active {
+    box-shadow: inset 2px 2px 10px white
+  }
 
 `
