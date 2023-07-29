@@ -1,12 +1,19 @@
 import React from 'react';
-import { RightSide } from './index.style';
-import { LeftSide } from './index.style';
-import { Wrapper } from './index.style';
-import { Menu } from './index.style';
-import { Btn } from '../../components/buttons/index.style';
-import { Input } from '../../components/input/index.style';
-import { AppName } from '../../components/appName';
-import { CategoryStyle } from '../../components/categoryList/index.style';
+import { RightSide,  Wrapper, Menu,  LeftSide } from './index.style';
+import { Btn } from '../../components/menu-buttons/index.style';
+import { AppName } from '../../components/App-name';
+import { AddItemButton } from '../../components/Add-item-button'; 
+import { ChooseCategory } from '../../components/Category-list';
+import { CostList } from '../../components/cost-list';
+import { ItemInput } from '../../components/Item-input';
+import { PriceInput } from '../../components/Price-input';
+
+
+
+
+
+
+
 
 
 
@@ -24,13 +31,30 @@ export const MainPage = () => {
             <Btn>Statistic</Btn>
          </Menu>
         
-        <RightSide>
+    <RightSide>
+    
              <AppName/>
-             <Input placeholder='Add new cost'/>
-             <CategoryStyle/>  
-        </RightSide>
+             <ChooseCategory/>
+             <ItemInput/>
+             <PriceInput/>
+             <AddItemButton/>
+             <CostList/>
+
+            
+             
+             
+             
+             
+             
+             
+              
+             
+             
+            
+             
+    </RightSide>
         
-       
+        
     </LeftSide>
    
     
