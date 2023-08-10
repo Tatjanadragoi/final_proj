@@ -3,26 +3,33 @@ import styled from 'styled-components'
 
 export const StyledCostList = styled.div`
     
-    margin-top: 100px; 
+  margin-top: 100px; 
   background-image: linear-gradient(144deg,#bfc2da, #abbdd4 50%,#b2dce9);
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   box-sizing: border-box;
-  color: #FFFFFF;
   font-family: Phantomsans, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   justify-content: center;
   width:80%;
   padding: 14px 15px;
   margin-left: 10%;
+  color: #3a37d6;
+  display: flex;
+  flex: 15;
+  gap: 450px;
+  justify-content: space-between;
+  
+
+  
 
 
 `
 
 export const CostListBtn = styled.button`
     
-    background-image: linear-gradient(144deg,#8a85a3, #a195eb 50%,#345ce2);
+  background-image: linear-gradient(144deg,#8a85a3, #a195eb 50%,#345ce2);
   border: 0;
   height: 33px;
   border-radius: 8px;
@@ -38,6 +45,8 @@ export const CostListBtn = styled.button`
   border-radius: 4px;
   border: 2px solid transparent;
   margin-top: 0.5%;
+  
+
  
   
   

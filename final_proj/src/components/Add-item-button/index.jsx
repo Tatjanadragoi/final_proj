@@ -9,7 +9,9 @@ export const AddItemButton = () => {
 
     return (
         
-           <AddButton>add</AddButton>
+            <AddButton/>
+        
+           
         
     )
 }
