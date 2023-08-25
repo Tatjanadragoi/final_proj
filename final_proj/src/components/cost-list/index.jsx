@@ -24,9 +24,9 @@ return (
             <div>{props.date}</div>
             <h2>{props.description}</h2>
             <div>{props.amount}€</div>
+            <div>{props.category}</div>
        
-       
-        </StyledCostList>
+       </StyledCostList>
     </div>
     
 )

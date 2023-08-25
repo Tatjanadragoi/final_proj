@@ -5,7 +5,7 @@ import styled from 'styled-components'
 export const Btn = styled.button`
    
   
-  margin-top: 50px; 
+  margin-top: 40px; 
   background-image: linear-gradient(144deg,#20107a, #5a46db 50%,#0037eb);
   border: 0;
   border-radius: 8px;
@@ -15,12 +15,15 @@ export const Btn = styled.button`
   font-family: Phantomsans, sans-serif;
   font-size: 16px;
   justify-content: center;
-  min-width: 140px;
-  padding: 15px 15px;
+  min-width: 160px;
+  padding: 9px 15px;
   cursor: pointer;
+  font-family: cursive;
+ 
+ 
   
   &:active {
-    box-shadow: inset 2px 2px 10px white
+    box-shadow: inset 2px 2px 10px lightblue
   }
 
 `

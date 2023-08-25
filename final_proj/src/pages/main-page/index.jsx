@@ -7,6 +7,7 @@ import { ChooseCategory } from '../../components/Category-list';
 import { CostList } from '../../components/cost-list';
 import { ItemInput } from '../../components/Item-input';
 import { PriceInput } from '../../components/Price-input';
+import { LeftMenu } from '../../components/Left-menu';
 // import { CostDate } from '../../components/CostDate.js';
 
 
@@ -15,7 +16,7 @@ import { PriceInput } from '../../components/Price-input';
 
 
 
-
+// 
 
 
 
@@ -26,17 +27,21 @@ export const MainPage = () => {
     {
         date: "Juny",
         description: "Smart TV",
-        amount: 499
+        amount: 499,
+        category: "Home",
+        
     },
     {
         date: "august",
-        description: "Ipad",
-        amount: 600
+        description: "Shopping",
+        amount: 600,
+        category: "Food",
     },
     {
         date: "may",
-        description: "Watch",
-        amount: 160
+        description: "Thailand",
+        amount: 2160,
+        category: "Travel",
     },
   ]
     
@@ -48,13 +53,7 @@ return (
 
     <Wrapper>
     
-     <LeftSide> 
-          <Menu>
-             <Btn>Create account</Btn>
-             <Btn>Add category</Btn>
-             <Btn>Statistic</Btn>
-          </Menu>
-        
+     
      <RightSide>
              <AppName/>
              <ChooseCategory/>
@@ -64,11 +63,12 @@ return (
   
 
 
-           <CostList date = {costs[0].date} description = {costs[0].description} amount =  {costs[0].amount}></CostList>
-           <CostList date = {costs[1].date} description = {costs[1].description} amount = {costs[1].amount}></CostList>
-           <CostList date = {costs[2].date} description = {costs[2].description} amount = {costs[2].amount}></CostList>  
+           <CostList date = {costs[0].date} description = {costs[0].description} amount = {costs[0].amount} category = {costs[0].category}></CostList>
+           <CostList date = {costs[1].date} description = {costs[1].description} amount = {costs[1].amount} category = {costs[1].category}></CostList>
+           <CostList date = {costs[2].date} description = {costs[2].description} amount = {costs[2].amount} category = {costs[2].category}></CostList> 
+          
      </RightSide>
-     </LeftSide>
+     
    
   </Wrapper>
     

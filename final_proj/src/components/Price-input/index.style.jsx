@@ -14,7 +14,7 @@ import styled from 'styled-components'
             border-radius: 4px;
             border: 2px solid transparent;
             box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
-          text-align:center;
+            text-align:center;
             margin-left: 1%;
             background: rgb(251, 251, 251);
             

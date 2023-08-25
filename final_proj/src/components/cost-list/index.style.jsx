@@ -3,22 +3,21 @@ import styled from 'styled-components'
 
 export const StyledCostList = styled.div`
     
-  margin-top: 100px; 
-  background-image: linear-gradient(144deg,#bfc2da, #abbdd4 50%,#b2dce9);
+  margin-top: 90px; 
+  background-image: linear-gradient(144deg,#5362d4, #abbdd4 50%,#b2dce9);
   border: 0;
   border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-shadow: rgba(157, 109, 211, 0.2) 0 15px 30px -5px;
   box-sizing: border-box;
   font-family: Phantomsans, sans-serif;
   font-size: 20px;
   justify-content: center;
   width:80%;
-  padding: 14px 15px;
+  padding: 15px;
   margin-left: 10%;
   color: #3a37d6;
   display: flex;
-  flex: 15;
-  gap: 450px;
+  gap: 200px;
   justify-content: space-between;
   
 
