@@ -11,7 +11,6 @@ export const StyledCostList = styled.div`
   box-sizing: border-box;
   font-family: Phantomsans, sans-serif;
   font-size: 20px;
-  justify-content: center;
   width:80%;
   padding: 15px;
   margin-left: 10%;

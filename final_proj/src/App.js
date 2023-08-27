@@ -8,7 +8,7 @@ import { CreateAccount } from './pages/Create-account-page';
 import { Router } from './routes';
 
 
-function App() {
+const App = () => {
 
   
   return (

@@ -54,5 +54,19 @@ export const Wrapper = styled.div `
   
  `;
 
+ export const CostAddWrapper = styled.div `
+    height: 10%;
+    align-items: center;
+    width:85%;
+    padding:15px;
+    text-align:center;
+    
+    
+    
+    
+   
 
- 
+
+
+  
+ `;

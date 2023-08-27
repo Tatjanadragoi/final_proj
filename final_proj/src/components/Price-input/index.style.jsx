@@ -3,7 +3,7 @@ import styled from 'styled-components'
         
         
         
-        export const StyledPriceInput = styled.input`
+        export const PriceInput = styled.input`
         
         
         margin-top: 70px;

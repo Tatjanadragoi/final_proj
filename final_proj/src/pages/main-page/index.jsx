@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { RightSide,  Wrapper, Menu,  LeftSide } from './index.style';
+import { RightSide,  Wrapper, Menu,  LeftSide, CostAddWrapper } from './index.style';
 import { Btn } from '../../components/menu-buttons/index.style';
 import { AppName } from '../../components/App-name';
-import { AddItemButton } from '../../components/Add-item-button'; 
 import { ChooseCategory } from '../../components/Category-list';
 import { CostList } from '../../components/cost-list';
 import { ItemInput } from '../../components/Item-input';
-import { PriceInput } from '../../components/Price-input';
-import { LeftMenu } from '../../components/Left-menu';
-// import { CostDate } from '../../components/CostDate.js';
+import {PriceInput } from '../../components/Price-input/index.style';
+
 
 
 
@@ -47,6 +45,43 @@ export const MainPage = () => {
     
 
 
+
+
+const [costName, setCostName] = useState('')
+
+  const onCostNameAdd = (event) => {
+    setCostName(event.target.value)
+
+  };
+
+const [costAmount, setCostAmount] = useState('')
+
+  const onAmountAdd = (event) => {
+    setCostAmount(event.target.value)
+  }
+
+
+  const [costDate, setCostDate] = useState('')
+
+  const onDateAdd = (event) => {
+    setCostDate(event.target.value)
+  }
+
+
+  const onAddButtonClick = () => {
+
+    const costData = {
+        name: costName,
+        amount: costAmount,
+        date: new Date(costDate) 
+    }
+    console.log(costData)
+    setCostName('');
+    setCostAmount('');
+    setCostDate('')
+  };
+  
+
 return (
 
 
@@ -56,10 +91,17 @@ return (
      
      <RightSide>
              <AppName/>
-             <ChooseCategory/>
-             <ItemInput/>
-             <PriceInput/>
-             <Btn/>
+             <CostAddWrapper>
+             
+                
+                <ChooseCategory/>
+                <ItemInput value={costDate} type='date' onChange={onDateAdd}/>
+                <ItemInput value={costName} onChange={onCostNameAdd}/>
+                <PriceInput value={costAmount} onChange={onAmountAdd}/>
+                <Btn onClick={onAddButtonClick}/>
+                
+             </CostAddWrapper>
+             
   
 
 

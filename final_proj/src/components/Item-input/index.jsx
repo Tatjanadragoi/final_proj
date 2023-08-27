@@ -7,7 +7,8 @@ import styled from 'styled-components'
         
         
         margin-top: 30px;
-            min-width: 30%;
+            min-width: 10%;
+            max-width: 30%;
             color: rgb(56, 19, 219);
             font-size: 16px;
             min-height: 29px;
