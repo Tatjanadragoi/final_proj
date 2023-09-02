@@ -17,20 +17,39 @@ export const LoginWrapper = styled.div`
 
 display: flex;
 flex-direction: column;
-
+gap: 15px;
 align-items: center;
 position: absolute;
 background-image: linear-gradient(144deg,#1844d6, #2e3681 50%,#1041d4);
 width: 25%;
 border-radius: 15px;
 box-shadow: 5px, 5px, 5px rgba (0, 0, 0, .5);
-padding: 10px;
+padding: 15px;
 left: 50%;
 top: 50%;
 transform: translate(-50%, -50%);
 
+
+
+
+   
+    
     
 `
+
+
+export const InputButtonWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+    margin-top: 10%;
+`
+
+
+
+
 
 export const ButtonWrapper = styled.div`
     

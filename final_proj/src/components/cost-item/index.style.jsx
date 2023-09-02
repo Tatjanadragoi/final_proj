@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const StyledCostList = styled.div`
     
-  margin-top: 90px; 
+  margin-top: 80px; 
   background-image: linear-gradient(144deg,#5362d4, #abbdd4 50%,#b2dce9);
   border: 0;
   border-radius: 8px;
@@ -11,19 +11,22 @@ export const StyledCostList = styled.div`
   box-sizing: border-box;
   font-family: Phantomsans, sans-serif;
   font-size: 20px;
-  width:80%;
+ width:80%;
   padding: 15px;
   margin-left: 10%;
-  color: #3a37d6;
-  display: flex;
-  gap: 200px;
-  justify-content: space-between;
+  color: #000002;
+  display: grid;
+  grid-gap: 10px;
+ 
+ 
   
-
-  
-
-
 `
+
+
+
+
+
+
 
 export const CostListBtn = styled.button`
     
@@ -55,3 +58,49 @@ export const CostListBtn = styled.button`
 
     
 `
+
+
+
+export const Price = styled.div`
+  color: #dd0a50;
+  background-color: #f0e7e7;
+  width: 150px;
+  height: 80px;
+  margin-top: 30px;
+  text-align: center;
+  font-family: fantasy;
+  border-radius: 10px;
+`
+
+export const Name = styled.div`
+  
+color: #ff5e00;
+background-color: #f0e7e7;
+  width: 150px;
+  height: 80px;
+  margin-top: 30px;
+  text-align: center;
+  font-family: fantasy;
+  border-radius: 10px;
+  /* margin-left: 50%;
+  margin-bottom: 10px; */
+  
+
+`
+export const Date = styled.div`
+  color: #1e11cf;
+  background-color: #f0e7e7;
+  width: 150px;
+  height: 80px;
+  margin-top: 30px;
+  text-align: center;
+  font-family: fantasy;
+  border-radius: 10px;
+
+  
+  
+  
+
+  
+`
+

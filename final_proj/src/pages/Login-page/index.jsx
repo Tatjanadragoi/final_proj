@@ -1,9 +1,10 @@
 import React from "react";
 import { Wrapper, LoginWrapper, LoginBtn } from "./index.style";
-import { ItemInput } from "../../components/Item-input";
 import { ButtonWrapper } from "./index.style";
 import { Btn } from "../../components/menu-buttons/index.style";
 import { useNavigate } from "react-router-dom";
+import { ItemInput } from "../../components/Cost-form/index.style";
+import { InputButtonWrapper } from "./index.style";
 
 
 export const LoginPage = () => {
@@ -22,8 +23,11 @@ return (
     
         
             <LoginWrapper>
-                <ItemInput placeholder="Username"/>
-                <ItemInput type="password" placeholder="Password"/>
+                <InputButtonWrapper>
+                    <ItemInput placeholder="Username"/>
+                    <ItemInput type="password" placeholder="Password"/>
+                </InputButtonWrapper>
+               
             <ButtonWrapper>
                 <Btn onClick={LoginClick}>Login</Btn>
                 <Btn>Sign in with Google</Btn>

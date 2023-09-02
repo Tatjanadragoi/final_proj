@@ -44,7 +44,7 @@ export const Wrapper = styled.div `
  export const Menu = styled.div `
     color: white;
     width: 7%;
-    height: 80%;
+    height: 50%;
     background-color: #241b72;
     position: fixed;
     margin-top: 70px;
@@ -54,16 +54,24 @@ export const Wrapper = styled.div `
   
  `;
 
- export const CostAddWrapper = styled.div `
+ export const CostAddWrapper = styled.div`
     height: 10%;
     align-items: center;
     width:85%;
     padding:15px;
-    text-align:center;
+    text-align:center;`
+   
     
     
+  
     
-    
+ export const UserInputWrapper = styled.div`
+    margin-top: 70px;
+   display: flex;
+   justify-content: center;
+   width: 70%;
+   margin-left: 15%;
+   gap: 15px;
    
 
 

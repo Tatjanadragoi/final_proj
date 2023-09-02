@@ -9,6 +9,23 @@ export const Wrapper = styled.div`
     height: 100%;
     background-color: #241b72;
     display: grid;
+  
+
+
+`
+
+
+export const InputWrapper = styled.div`
+  
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 5px;
+    align-items: center;
+    margin-top: 50px;
+    
+
 
 
 `
