@@ -3,21 +3,21 @@ import styled from 'styled-components'
 
 export const StyledCostList = styled.div`
     
-  margin-top: 80px; 
-  background-image: linear-gradient(144deg,#5362d4, #abbdd4 50%,#b2dce9);
-  border: 0;
-  border-radius: 8px;
-  box-shadow: rgba(157, 109, 211, 0.2) 0 15px 30px -5px;
-  box-sizing: border-box;
-  font-family: Phantomsans, sans-serif;
-  font-size: 20px;
- width:80%;
-  padding: 15px;
-  margin-left: 10%;
-  color: #000002;
-  display: grid;
-  grid-gap: 10px;
+
  
+  
+  
+    margin-top: 50px;
+    margin-left: 10%;
+    background-image: linear-gradient(144deg,#5362d4, #abbdd4 50%,#b2dce9);
+    display: grid;
+    grid-template-columns: fr 1fr 1fr;
+    grid-template-rows: 1fr 10px;
+    color: #fff;
+    font-size: 14px;
+    row-gap: 10px;
+    border-radius: 10px;
+    width: 80%;
  
   
 `
@@ -65,7 +65,7 @@ export const Price = styled.div`
   color: #dd0a50;
   background-color: #f0e7e7;
   width: 150px;
-  height: 80px;
+  height: 30px;
   margin-top: 30px;
   text-align: center;
   font-family: fantasy;
@@ -77,7 +77,7 @@ export const Name = styled.div`
 color: #ff5e00;
 background-color: #f0e7e7;
   width: 150px;
-  height: 80px;
+  height: 30px;
   margin-top: 30px;
   text-align: center;
   font-family: fantasy;
@@ -91,7 +91,7 @@ export const Date = styled.div`
   color: #1e11cf;
   background-color: #f0e7e7;
   width: 150px;
-  height: 80px;
+  height: 30px;
   margin-top: 30px;
   text-align: center;
   font-family: fantasy;

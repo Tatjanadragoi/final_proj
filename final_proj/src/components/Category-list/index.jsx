@@ -1,12 +1,16 @@
 import React from "react";
-import { CategoryStyle } from "./index.style";
+import { CategorySelect } from "./index.style";
 
-export const ChooseCategory = () => {
+export const SelectCategory = () => {
 
 
     return (
        
-            <CategoryStyle/>
+            <CategorySelect>
+                <option value='green'></option>
+                <option value='blue'></option>
+                <option value='red'></option>
+            </CategorySelect>
 
 
         

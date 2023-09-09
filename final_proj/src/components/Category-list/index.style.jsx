@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 
-export const CategoryStyle = styled.select`
+export const CategorySelect = styled.select`
     
             
             width: 10%;

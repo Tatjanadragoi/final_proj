@@ -1,5 +1,5 @@
 import React from "react";
-import { Wrapper, LoginWrapper, LoginBtn } from "./index.style";
+import {Wrapper, LoginWrapper, LoginBtn } from "./index.style";
 import { ButtonWrapper } from "./index.style";
 import { Btn } from "../../components/menu-buttons/index.style";
 import { useNavigate } from "react-router-dom";
@@ -19,10 +19,9 @@ export const LoginPage = () => {
     }
 return (
 
- <Wrapper>
-    
-        
-            <LoginWrapper>
+ 
+    <Wrapper>
+    <LoginWrapper>
                 <InputButtonWrapper>
                     <ItemInput placeholder="Username"/>
                     <ItemInput type="password" placeholder="Password"/>
@@ -35,9 +34,14 @@ return (
                 
             </ButtonWrapper>
             </LoginWrapper>
+
+    </Wrapper>
+    
+        
+           
         
    
-</Wrapper> 
+
 
 
 )

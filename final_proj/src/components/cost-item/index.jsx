@@ -6,7 +6,7 @@ import { AddItemButton } from "../Add-item-button";
 
 
 
-export const CostItem = ({children}) => {
+export const CostItem = ({children, onDelete}) => {
 
    
 
@@ -14,6 +14,9 @@ return (
     
         
         <StyledCostList>
+            <CostListBtn>Edit</CostListBtn>
+            <CostListBtn onClick={onDelete}>Delete</CostListBtn>
+        
             
             <div>{children}</div>
 
