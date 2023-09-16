@@ -66,6 +66,17 @@ setCosts((prevCosts) =>   {
     })
 });
     }
+
+    const onEdit = (idToEdit, newCost, newPrice, newDate) => {
+       const costToEdit = costs.find(({id}) => id === idToEdit)
+       
+       costToEdit.isEditing = !costToEdit.isEditing;
+       costToEdit.cost = newCost;
+       costToEdit.date = newDate;
+       costToEdit.price = newPrice;
+       setCosts([...costs])
+
+}
   
 
 return (
@@ -82,8 +93,17 @@ return (
              </UserInputWrapper>
              {isLoading && <Preloader/>}
              
-                    {costs.map(({cost, price, date, id})=>(
-                <CostItem onDelete= {() => onDeleteClick(id)}>
+                    {costs.map(({cost, price, date, id, isEditing})=>(
+                <CostItem
+
+                    id={id} 
+                    isEditing={isEditing}
+                    onDelete= {() => onDeleteClick(id)}
+                    onEdit={onEdit}
+                    cost={cost}
+                    price={price}
+                    
+                 >
                     <Date>{date}</Date>
                     <Name>{cost}</Name>
                     <Price>{price}€</Price>
