@@ -16,7 +16,6 @@ export const ItemInput = styled.input`
         
             min-width: 30%;
             max-width: 30%;
-            color: rgb(56, 19, 219);
             font-size: 16px;
             min-height: 29px;
             border-radius: 7px;
@@ -24,6 +23,7 @@ export const ItemInput = styled.input`
             box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
             background: rgb(251, 251, 251);
             text-align: center;
+           
            
             
             

@@ -26,7 +26,7 @@ const OnAddNewCategoriesClick = () => {
             <Btn onClick={OnLoginClick}>Login</Btn>
             <Btn onClick={OnCreateAccountClick}>Create account</Btn>
             <Btn onClick={OnAddNewCategoriesClick}>Add new category</Btn>
-            <Btn>Settings</Btn>
+            <Btn>Statistic</Btn>
 </Menu>
 
     )

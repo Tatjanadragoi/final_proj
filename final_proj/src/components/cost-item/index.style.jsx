@@ -10,20 +10,14 @@ export const StyledCostList = styled.div`
     margin-top: 50px;
     margin-left: 10%;
     background-image: linear-gradient(144deg,#5362d4, #abbdd4 50%,#b2dce9);
-    display: grid;
-    grid-template-columns: fr 1fr 1fr;
-    grid-template-rows: 1fr 10px;
     color: #fff;
     font-size: 14px;
-    row-gap: 10px;
     border-radius: 10px;
     width: 80%;
+    
  
   
 `
-
-
-
 
 
 
@@ -62,26 +56,26 @@ export const CostListBtn = styled.button`
 
 
 export const Price = styled.div`
-  color: #dd0a50;
+  color: #ba0cd1;
   background-color: #f0e7e7;
-  width: 150px;
-  height: 30px;
-  margin-top: 30px;
+  min-width: 150px;
+  margin-bottom: 60px;
   text-align: center;
   font-family: fantasy;
   border-radius: 10px;
+  height: 30px;
 `
 
 export const Name = styled.div`
   
-color: #ff5e00;
+color: #d45004;
 background-color: #f0e7e7;
-  width: 150px;
-  height: 30px;
-  margin-top: 30px;
+min-width: 150px;
+  margin-bottom: 60px;
   text-align: center;
   font-family: fantasy;
   border-radius: 10px;
+  height: 30px;
  
   
 
@@ -89,12 +83,13 @@ background-color: #f0e7e7;
 export const Date = styled.div`
   color: #1e11cf;
   background-color: #f0e7e7;
-  width: 150px;
-  height: 30px;
-  margin-top: 30px;
+  min-width: 150px;
+  margin-bottom: 60px;
   text-align: center;
   font-family: fantasy;
   border-radius: 10px;
+  height: 30px;
+  
 
   
   
@@ -119,9 +114,23 @@ export const ModalButton = styled.button`
   border-radius: 4px;
   border: 2px solid transparent;
   /* display: grid; */
-  /* justify-content: space-between; */
+  justify-content: space-between; 
   
   
+
+
+`
+export const ItemWrapper = styled.div`
+ display: flex;
+ justify-content: space-around;
+
+ 
+ 
+ 
+ 
+
+
+ 
 
 
 `

@@ -66,12 +66,15 @@ export const Wrapper = styled.div `
   
     
  export const UserInputWrapper = styled.div`
-    margin-top: 70px;
-   display: flex;
-   justify-content: center;
-   width: 70%;
-   margin-left: 15%;
-   gap: 15px;
+    margin-top: 80px;
+    width: 1080px;
+    display:flex;
+    gap: 25px;
+    margin-left: 10%;
+    
+    
+   
+  
    
 
 
