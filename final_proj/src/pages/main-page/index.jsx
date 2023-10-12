@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { RightSide,  Wrapper, Menu,  LeftSide, CostAddWrapper, UserInputWrapper } from './index.style';
+import { RightSide,  Wrapper, UserInputWrapper } from './index.style';
 import { Btn } from '../../components/menu-buttons/index.style';
-import { AppName } from '../../components/App-name';
+
 import {CostItem } from '../../components/cost-item';
-import {  ItemInput, PriceInput, CostListBtn } from '../../components/Cost-form/index.style';
+import {  ItemInput, PriceInput, CostListBtn } from '../../components/cost-form/index.style';
 import { Date, Price, Name  } from '../../components/cost-item/index.style';
 import { getData } from '../../components/mocks';
 import { Preloader } from '../../components/preloader';
+import { Titel } from '../../components/App-name/index.style';
 
-import { CategorySelect } from '../../components/Category-list/index.style';
+import { CategorySelect } from '../../components/category-list/index.style';
 
 
 
@@ -19,6 +20,7 @@ export const MainPage = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [price, setPrice] = useState('')
     const [date, setDate] = useState('')
+    
 
     useEffect(() => {
         setIsLoading(true);
@@ -29,7 +31,7 @@ export const MainPage = () => {
   
     },[]);
 
-console.log(costs)
+
     const onDatechange = (event) => {
         setDate(event.target.value)
      }
@@ -59,6 +61,18 @@ console.log(costs)
         setDate('');
         setPrice('')
     }
+
+
+    
+    
+
+
+
+
+
+
+
+
     const onDeleteClick = (id) => {
 setCosts((prevCosts) =>   {
     return prevCosts.filter((costText) => {
@@ -83,7 +97,7 @@ return (
 
     <Wrapper>
     <RightSide>
-            <AppName/>
+            <Titel>Budget planner</Titel>
              <UserInputWrapper>
                   <PriceInput value={date} onChange={onDatechange} type='Date'/>
                   <CategorySelect id='sdfds'></CategorySelect>
@@ -96,6 +110,7 @@ return (
                     {costs.map(({cost, price, date, id, isEditing})=>(
                 <CostItem
 
+                    key={id}
                     id={id} 
                     isEditing={isEditing}
                     onDelete= {() => onDeleteClick(id)}

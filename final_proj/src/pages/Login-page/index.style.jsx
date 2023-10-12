@@ -7,14 +7,7 @@ export const Wrapper = styled.div`
     background-color: #3533a0;
 `
 
-// export const Wrapper = styled.div`
-//     width: 100%;
-//     height: 100%;
-//     background-color: #532baf;
-//     display: grid;
 
-
-// `
 
 export const LoginWrapper = styled.div`
 
@@ -24,7 +17,7 @@ flex-direction: column;
 gap: 15px;
 align-items: center;
 position: absolute;
-background-image: linear-gradient(144deg,#1844d6, #2e3681 50%,#1041d4);
+background: rgba(255,255,255, 0.1);
 width: 25%;
 border-radius: 15px;
 box-shadow: 5px, 5px, 5px rgba (0, 0, 0, .5);

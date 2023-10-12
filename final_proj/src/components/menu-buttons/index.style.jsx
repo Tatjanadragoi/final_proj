@@ -6,12 +6,12 @@ export const Btn = styled.button`
    
   
   margin-top: 40px; 
-  background-image: linear-gradient(144deg,#20107a, #5a46db 50%,#0037eb);
+  background-image: linear-gradient(144deg,#3e337a, #a095ec 50%,#c7daec);
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #140f0f;
   font-family: Phantomsans, sans-serif;
   font-size: 16px;
   justify-content: center;

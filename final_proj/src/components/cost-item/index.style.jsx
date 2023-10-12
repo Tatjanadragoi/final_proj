@@ -82,8 +82,7 @@ background-color: #f0e7e7;
   text-align: center;
   font-family: fantasy;
   border-radius: 10px;
-  /* margin-left: 50%;
-  margin-bottom: 10px; */
+ 
   
 
 `
@@ -104,3 +103,25 @@ export const Date = styled.div`
   
 `
 
+export const ModalButton = styled.button`
+  
+  background-color: blue;
+  height: 20px;
+  border-radius: 8px;
+  box-shadow: rgba(176, 133, 224, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-family: Phantomsans, sans-serif;
+  font-size: 13px;
+  width:60px;
+  cursor: pointer;
+  margin-left: 60%;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  /* display: grid; */
+  /* justify-content: space-between; */
+  
+  
+
+
+`
