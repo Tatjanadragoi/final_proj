@@ -27,7 +27,7 @@ export const CategoryPage = (children, id) => {
 
 
 
-
+console.log(';')
   
   const onAddCategorie = () => {
     dispatch(addCategory({
