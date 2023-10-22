@@ -29,6 +29,7 @@ export const CostItem = memo(
 
     return (
       <StyledCostList>
+        
         <Modal isOpen={showModal} onClose={handleCloseModal}>
           {" "}
           Delete cost?
@@ -42,21 +43,19 @@ export const CostItem = memo(
           {isEditing ? "Ok" : "Edit"}
         </CostListBtn>
 
-        
-          {isEditing ? (
-            <ItemWrapper>
-              <ItemInput value={costText} onChange={handleCostChange} />
-              <ItemInput
-                type="Date"
-                value={costDate}
-                onChange={handleDateChange}
-              />
-              <ItemInput value={costPrice} onChange={handlePriceChange} />
-            </ItemWrapper>
-          ) : (
-            children
-          )}
-        
+        {isEditing ? (
+          <ItemWrapper>
+            <ItemInput value={cost} onChange={handleCostChange} />
+            <ItemInput
+              type="Date"
+              value={costDate}
+              onChange={handleDateChange}
+            />
+            <ItemInput value={costPrice} onChange={handlePriceChange} />
+          </ItemWrapper>
+        ) : (
+          children
+        )}
       </StyledCostList>
     );
   }

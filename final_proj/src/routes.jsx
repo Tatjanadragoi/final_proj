@@ -7,7 +7,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import { LeftSide } from "./pages/main-page/index.style";
 import { LeftMenu } from "./components/left-menu";
 import { NotFoundPage } from "./pages/not-found-page";
-import { PrivateRoute } from "./components/privat-route";
+
 
 
 
@@ -27,11 +27,7 @@ export const Router = () => {
         <Route path= "/" element = {<LoginPage/>}/>
         <Route path= "/categories" element = {<CategoryPage/>}/>
         <Route path= "/createAccount" element = {<CreateAccount/>}/>
-        <Route path= "/main" element = {
-            <PrivateRoute>
-                <MainPage/>
-            </PrivateRoute>
-        }/>
+        <Route path= "/main" element = { <MainPage/>}/>
         <Route path= "*" element = {<NotFoundPage/>}/>
         
     </Routes>

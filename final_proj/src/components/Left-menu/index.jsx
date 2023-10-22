@@ -7,25 +7,25 @@ export const LeftMenu = () => {
 
 const navigate = useNavigate();
 
-const OnMainClick = () => {
+const onMainClick = () => {
     navigate('/main')
 }
-const OnLoginClick = () => {
+const onLoginClick = () => {
     navigate('/')
 }
-const OnCreateAccountClick = () => {
+const onCreateAccountClick = () => {
     navigate('/createAccount')
 }
-const OnAddNewCategoriesClick = () => {
+const onAddNewCategoriesClick = () => {
     navigate('/categories')
 }
     return (
 
 <Menu>
-            <Btn onClick={OnMainClick}>Main</Btn>
-            <Btn onClick={OnLoginClick}>Login</Btn>
-            <Btn onClick={OnCreateAccountClick}>Create account</Btn>
-            <Btn onClick={OnAddNewCategoriesClick}>Add new category</Btn>
+            <Btn onClick={onMainClick}>Main</Btn>
+            <Btn onClick={onLoginClick}>Login</Btn>
+            <Btn onClick={onCreateAccountClick}>Create account</Btn>
+            <Btn onClick={onAddNewCategoriesClick}>Add new category</Btn>
             <Btn>Statistic</Btn>
 </Menu>
 

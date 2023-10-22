@@ -5,8 +5,19 @@ import { Titel } from "./index.style";
 import { ItemInput } from "../../components/cost-form/index.style";
 import { AllCategories } from "../../components/category-item";
 
+
+import { addCategory, deleteCategory } from "../../redux/costSlice";
+import { useDispatch, useSelector, editCategory } from "react-redux";
+import { getCategories } from "../../redux/appSelectors";
+
+
+
+
+
 export const CategoryPage = (children, id) => {
-  const [categories, setCategories] = useState([]);
+  const dispatch = useDispatch();
+  const categories = useSelector(getCategories);
+  
   const [categorie, setCategorie] = useState("");
   const addCategorieRef = useRef(null);
 
@@ -14,35 +25,40 @@ export const CategoryPage = (children, id) => {
     setCategorie(event.target.value);
   };
 
+
+
+
+  
   const onAddCategorie = () => {
-    setCategories((prevCategories) => {
-      return [
-        ...prevCategories,
-        {
-          id: Math.random(),
-          categorie: categorie,
-        },
-      ];
-    });
+    dispatch(addCategory({
+      id: Math.random(),
+      categorie: categorie,
+    }));
+   
     setCategorie("");
 
     addCategorieRef.current?.focus();
   };
   const onDeleteClick = (id) => {
-    setCategories((prevCategories) => {
-      return prevCategories.filter((categorie) => {
-        return categorie.id !== id;
-      });
-    });
+    dispatch(deleteCategory(id))
+    
   };
 
-  const onEditClick = (idToEdit, newCategorie) => {
-    const categorieToEdit = categories.find(({ id }) => id === idToEdit);
 
-    categorieToEdit.isEditing = !categorieToEdit.isEditing;
-    categorieToEdit.categorie = newCategorie;
-    setCategories([...categories]);
-  };
+
+  // const onEditClick = (id) => { 
+  //   dispatch(editCategory(id))
+  // };
+
+   const onEditClick = (idToEdit, newCategorie) => {
+
+    
+    // const categorieToEdit = categories.find(({ id }) => id === idToEdit);
+
+    // categorieToEdit.isEditing = !categorieToEdit.isEditing;
+    // categorieToEdit.categorie = newCategorie;
+    // setCategories([...categories]);
+   };
 
   return (
     <Wrapper>

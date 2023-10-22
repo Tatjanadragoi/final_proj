@@ -31,7 +31,6 @@ export const AllCategories = ({
     <LeftSide>
       <Wrapper>
         <Modal isOpen={showModal} onClose={handleCloseModal}>
-          
           Delete category?
           <ModalButton onClick={() => onDelete(id)}>Yes</ModalButton>
           <ModalButton onClick={handleCloseModal}>Cancel</ModalButton>
