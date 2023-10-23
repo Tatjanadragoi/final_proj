@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { RightSide, Wrapper, UserInputWrapper } from "./index.style";
 import { CostItem } from "../../components/cost-item";
 import {ItemInput,PriceInput,CostListBtn} from "../../components/cost-form/index.style";
-import { Date, Price, Name } from "../../components/cost-item/index.style";
+import { Date, Price, Name, Categorie } from "../../components/cost-item/index.style";
 import { Titel } from "../../components/App-name/index.style";
 import { ItemWrapper } from "../../components/cost-item/index.style";
 import { CategorySelect } from "../../components/category-list/index.style";
@@ -11,7 +11,7 @@ import { StyledPreloader } from "../../components/preloader/index.style";
 
 import { getCategories } from "../../redux/appSelectors";
 
-import { addExpenses } from "../../redux/newCostSlice";
+import { addExpenses, deleteExpenses } from "../../redux/newCostSlice";
 import { useDispatch} from "react-redux";
 import { getExpenses } from "../../redux/appSelectors";
 import { useSelector } from "react-redux";
@@ -32,20 +32,11 @@ const [cost, setCost] = useState("");
 
 
 
-
-
-
-
-
-
-
-
-// const newCosts = useSelector(getCosts);
-  // const [costs, setCosts] = useState([]);
   const [costText, setCostText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [price, setPrice] = useState("");
   const [date, setDate] = useState("");
+  const [categorie, setCategorie] = useState("");
 
   // useEffect(() => {
   //   setIsLoading(true);
@@ -57,6 +48,10 @@ const [cost, setCost] = useState("");
   //       setIsLoading(false);
   //     });
   // }, []);
+
+  const onCategorieChange = (event) => {
+    setCategorie(event.target.value);
+  };
 
   const onDatechange = (event) => {
     setDate(event.target.value);
@@ -76,11 +71,13 @@ const [cost, setCost] = useState("");
       cost: costText,
       date: date,
       price: price,
-     
+      categorie: categorie,
+      isEditing: false
       
       
     }));
-
+ 
+    
 
     // setCosts((prevCosts) => {
     //   return [
@@ -98,6 +95,12 @@ const [cost, setCost] = useState("");
     setCostText("");
     setDate("");
     setPrice("");
+  };
+
+
+  const onDeleteClick = (id) => {
+    dispatch(deleteExpenses(id))
+    
   };
 
   // const onDeleteClick = (id) => {
@@ -123,7 +126,7 @@ const [cost, setCost] = useState("");
       <RightSide>
         <Titel>Budget planner</Titel>
         <UserInputWrapper>
-          <CategorySelect>
+          <CategorySelect onChange={onCategorieChange}>
 
 
 {categories.map(({ categorie }) => (
@@ -152,18 +155,20 @@ const [cost, setCost] = useState("");
 
         
 
-        {newCosts.map(({ cost, price, date, id, isEditing }) => (
+        {newCosts.map(({ cost, price, date, id, isEditing, categorie }) => (
           <CostItem
             key={id}
             id={id}
             isEditing={isEditing}
-            // onDelete={() => onDeleteClick(id)}
+            onDelete={() => onDeleteClick (id)}
             // onEdit={onEdit}
             cost={newCosts}
             price={price}
+            category= {categorie}
           >
             
             <ItemWrapper>
+              <Categorie>{categorie}</Categorie>
               <Date>{date}</Date>
               <Name>{cost}</Name>
               <Price>{price}€</Price>

@@ -5,13 +5,15 @@ import { ItemInput } from "../cost-form/index.style";
 import { Modal } from "../modal";
 import { ModalButton } from "./index.style";
 import { ItemWrapper } from "./index.style";
+import { getCategories } from "../../redux/appSelectors";
 
 export const CostItem = memo(
-  ({ children, id, onDelete, onEdit, isEditing, cost, date, price }) => {
+  ({ children, id, onDelete, onEdit, isEditing, cost, date, price, categorie }) => {
     const [costText, setCostText] = useState(cost);
     const [costDate, setCostDate] = useState(date);
     const [costPrice, setCostPrice] = useState(price);
     const [showModal, setShowModal] = useState(false);
+    const [costCategorie, setCostCategorie] = useState(categorie)
 
     const handleCostChange = (event) => {
       setCostText(event.target.value);
@@ -22,6 +24,11 @@ export const CostItem = memo(
     const handlePriceChange = (event) => {
       setCostPrice(event.target.value);
     };
+    const handleCategorieChange = (event) => {
+      setCostCategorie(event.target.value);
+    };
+
+
 
     const handleCloseModal = () => setShowModal(false);
 
@@ -39,12 +46,13 @@ export const CostItem = memo(
 
         <CostListBtn onClick={handleOpenModal}>Delete</CostListBtn>
 
-        <CostListBtn onClick={() => onEdit(id, costText, costDate, costPrice)}>
+        <CostListBtn onClick={() => onEdit(id, costText, costDate, costPrice, costCategorie)}>
           {isEditing ? "Ok" : "Edit"}
         </CostListBtn>
 
         {isEditing ? (
           <ItemWrapper>
+            <ItemInput value={costCategorie} onChange={handleCategorieChange}/>
             <ItemInput value={cost} onChange={handleCostChange} />
             <ItemInput
               type="Date"

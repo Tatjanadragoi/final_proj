@@ -80,6 +80,22 @@ min-width: 150px;
   
 
 `
+
+export const Categorie = styled.div`
+  
+color: #db6e2f;
+background-color: #e7e7f0;
+min-width: 150px;
+  margin-bottom: 60px;
+  text-align: center;
+  font-family: fantasy;
+  border-radius: 10px;
+  height: 30px;
+ 
+  
+
+`
+
 export const Date = styled.div`
   color: #1e11cf;
   background-color: #f0e7e7;

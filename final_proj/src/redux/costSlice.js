@@ -6,7 +6,8 @@ import { createSlice } from '@reduxjs/toolkit';
     initialState: {
         categories: [],
         // costs: [],
-        isLoading: false
+        isLoading: false,
+        isEditing: false
     },
     reducers: {
 
@@ -19,6 +20,14 @@ import { createSlice } from '@reduxjs/toolkit';
 
         },
 
+
+        editCategory (state, action) {
+            const categoryToEdit = state.categories.find(({id}) => id === action.payload.id);
+      
+            categoryToEdit.isEditing = !categoryToEdit.isEditing;
+            categoryToEdit.categories = action.payload.text;
+          },
+
         // editCategory(state, action) {
         //     state.categories = 
 
@@ -26,14 +35,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 
 
-        // addCost (state, action) {
-        //         state.costs.push(action.payload)
-        //     },
-
-
-        // deleteCost (state, action) {
-            
-        // }
+        
     }
 })
 

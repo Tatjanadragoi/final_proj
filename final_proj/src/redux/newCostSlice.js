@@ -6,6 +6,7 @@ import { createSlice } from '@reduxjs/toolkit';
     initialState: {
         expenses: [],
         isLoading: false,
+        isEditing: false,
         
         
     },
@@ -26,8 +27,13 @@ import { createSlice } from '@reduxjs/toolkit';
             },
 
 
-        deleteCost (state, action) {
-            
+        deleteExpenses(state, action) {
+                state.expenses = state.expenses.filter((expenses) => expenses.id !== action.payload);
+    
+            },
+
+        editExpenses(state, action) {
+
         }
     }
 })

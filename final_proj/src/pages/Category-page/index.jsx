@@ -6,8 +6,8 @@ import { ItemInput } from "../../components/cost-form/index.style";
 import { AllCategories } from "../../components/category-item";
 
 
-import { addCategory, deleteCategory } from "../../redux/costSlice";
-import { useDispatch, useSelector, editCategory } from "react-redux";
+import { addCategory, deleteCategory, editCategory} from "../../redux/costSlice";
+import { useDispatch, useSelector} from "react-redux";
 import { getCategories } from "../../redux/appSelectors";
 
 
@@ -27,12 +27,13 @@ export const CategoryPage = (children, id) => {
 
 
 
-console.log(';')
+
   
   const onAddCategorie = () => {
     dispatch(addCategory({
       id: Math.random(),
       categorie: categorie,
+      isEditing: false,
     }));
    
     setCategorie("");
@@ -46,19 +47,21 @@ console.log(';')
 
 
 
-  // const onEditClick = (id) => { 
-  //   dispatch(editCategory(id))
-  // };
+  const onEditClick = (id) => { 
+    dispatch(editCategory(id))
+  };
 
-   const onEditClick = (idToEdit, newCategorie) => {
+
+  
+  //  const onEditClick = (idToEdit, newCategorie) => {
 
     
-    // const categorieToEdit = categories.find(({ id }) => id === idToEdit);
+  //   // const categorieToEdit = categories.find(({ id }) => id === idToEdit);
 
-    // categorieToEdit.isEditing = !categorieToEdit.isEditing;
-    // categorieToEdit.categorie = newCategorie;
-    // setCategories([...categories]);
-   };
+  //   // categorieToEdit.isEditing = !categorieToEdit.isEditing;
+  //   // categorieToEdit.categorie = newCategorie;
+  //   // setCategories([...categories]);
+  //  };
 
   return (
     <Wrapper>
