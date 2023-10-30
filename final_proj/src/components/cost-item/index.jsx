@@ -8,7 +8,7 @@ import { ItemWrapper } from "./index.style";
 import { getCategories } from "../../redux/appSelectors";
 
 export const CostItem = memo(
-  ({ children, id, onDelete, onEdit, isEditing, cost, date, price, categorie }) => {
+  ({ children, id, onDelete, onEdit, isEdditing, cost, date, price, categorie }) => {
     const [costText, setCostText] = useState(cost);
     const [costDate, setCostDate] = useState(date);
     const [costPrice, setCostPrice] = useState(price);
@@ -27,6 +27,7 @@ export const CostItem = memo(
     const handleCategorieChange = (event) => {
       setCostCategorie(event.target.value);
     };
+    
 
 
 
@@ -47,10 +48,10 @@ export const CostItem = memo(
         <CostListBtn onClick={handleOpenModal}>Delete</CostListBtn>
 
         <CostListBtn onClick={() => onEdit(id, costText, costDate, costPrice, costCategorie)}>
-          {isEditing ? "Ok" : "Edit"}
+          {isEdditing ? "Ok" : "Edit"}
         </CostListBtn>
 
-        {isEditing ? (
+        {isEdditing ? (
           <ItemWrapper>
             <ItemInput value={costCategorie} onChange={handleCategorieChange}/>
             <ItemInput value={cost} onChange={handleCostChange} />

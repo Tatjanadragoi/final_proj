@@ -12,7 +12,7 @@ export const AllCategories = ({
   children,
   onDelete,
   onEditClick,
-  isEditing,
+  isEdditing,
   categorie,
   id,
 }) => {
@@ -37,7 +37,7 @@ export const AllCategories = ({
         </Modal>
         <AddedCategoriesWrapper>
           <AddedCategories>
-            {isEditing ? (
+            {isEdditing ? (
               <EditInput
                 value={costCategorie}
                 onChange={handleCategorieChange}
@@ -47,7 +47,7 @@ export const AllCategories = ({
             )}
           </AddedCategories>
           <Btn onClick={() => onEditClick(id, costCategorie)}>
-            {isEditing ? "Ok" : "Edit"}
+            {isEdditing ? "Ok" : "Edit"}
           </Btn>
           <Btn onClick={handleOpenModal}>Delete</Btn>
         </AddedCategoriesWrapper>

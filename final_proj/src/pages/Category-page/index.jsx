@@ -33,7 +33,7 @@ export const CategoryPage = (children, id) => {
     dispatch(addCategory({
       id: Math.random(),
       categorie: categorie,
-      isEditing: false,
+      isEdditing: false,
     }));
    
     setCategorie("");
@@ -76,14 +76,14 @@ export const CategoryPage = (children, id) => {
       </InputWrapper>
       <Titel>Existing categories</Titel>
 
-      {categories.map(({ categorie, id, isEditing }) => (
+      {categories.map(({ categorie, id, isEdditing }) => (
         <AllCategories
           onDelete={() => onDeleteClick(id)}
           onEditClick={onEditClick}
           categorie={categorie}
           id={id}
           key={id}
-          isEditing={isEditing}
+          isEdditing={isEdditing}
           onClickEdit={onEditClick}
         >
           {categorie}

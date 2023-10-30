@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { RightSide, Wrapper, UserInputWrapper } from "./index.style";
+import { RightSide, Wrapper, UserInputWrapper, LogedInUser } from "./index.style";
 import { CostItem } from "../../components/cost-item";
 import {ItemInput,PriceInput,CostListBtn} from "../../components/cost-form/index.style";
 import { Date, Price, Name, Categorie } from "../../components/cost-item/index.style";
@@ -11,10 +11,12 @@ import { StyledPreloader } from "../../components/preloader/index.style";
 
 import { getCategories } from "../../redux/appSelectors";
 
-import { addExpenses, deleteExpenses } from "../../redux/newCostSlice";
+import { addExpenses, deleteExpenses, editExpenses } from "../../redux/newCostSlice";
 import { useDispatch} from "react-redux";
 import { getExpenses } from "../../redux/appSelectors";
 import { useSelector } from "react-redux";
+import { loginWithGoogle } from "../../redux/authSlice";
+import { getUser } from "../../redux/authSelectors";
 
 export const MainPage = () => {
 
@@ -37,17 +39,8 @@ const [cost, setCost] = useState("");
   const [price, setPrice] = useState("");
   const [date, setDate] = useState("");
   const [categorie, setCategorie] = useState("");
+  const userData = useSelector(getUser)
 
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   getData()
-  //     .then((data) => {
-  //       setCosts(data);
-  //     })
-  //     .finally(() => {
-  //       setIsLoading(false);
-  //     });
-  // }, []);
 
   const onCategorieChange = (event) => {
     setCategorie(event.target.value);
@@ -72,57 +65,46 @@ const [cost, setCost] = useState("");
       date: date,
       price: price,
       categorie: categorie,
-      isEditing: false
+      isEdditing: false
       
       
     }));
- 
-    
-
-    // setCosts((prevCosts) => {
-    //   return [
-    //     ...prevCosts,
-    //     {
-    //       id: Math.random(),
-    //       date: date,
-    //       category: "",
-    //       cost: costText,
-    //       price: price,
-    //     },
-    //   ];
-    // });
-
     setCostText("");
     setDate("");
     setPrice("");
   };
 
 
+  const onEditCost = (id, costText, date, price, categorie) => {
+   
+    const action = editExpenses ({
+      
+      id, 
+      cost: costText,
+      date: date,
+      price: price,
+      categorie: categorie,
+      isEdditing: false
+      
+     
+      
+    })
+    
+    dispatch(action);
+}; 
+
+
   const onDeleteClick = (id) => {
     dispatch(deleteExpenses(id))
+    dispatch(loginWithGoogle())
     
   };
 
-  // const onDeleteClick = (id) => {
-  //   setCosts((prevCosts) => {
-  //     return prevCosts.filter((costText) => {
-  //       return costText.id !== id;
-  //     });
-  //   });
-  // };
-
-  // const onEdit = (idToEdit, newCost, newPrice, newDate) => {
-  //   const costToEdit = costs.find(({ id }) => id === idToEdit);
-
-  //   costToEdit.isEditing = !costToEdit.isEditing;
-  //   costToEdit.cost = newCost;
-  //   costToEdit.date = newDate;
-  //   costToEdit.price = newPrice;
-  //   setCosts([...costs]);
-  // };
+ 
 
   return (
     <Wrapper>
+      <LogedInUser>{userData?.email}</LogedInUser>
       <RightSide>
         <Titel>Budget planner</Titel>
         <UserInputWrapper>
@@ -155,13 +137,13 @@ const [cost, setCost] = useState("");
 
         
 
-        {newCosts.map(({ cost, price, date, id, isEditing, categorie }) => (
+        {newCosts.map(({ cost, price, date, id, isEdditing, categorie }) => (
           <CostItem
             key={id}
             id={id}
-            isEditing={isEditing}
+            isEdditing={isEdditing}
             onDelete={() => onDeleteClick (id)}
-            // onEdit={onEdit}
+            onEdit={onEditCost}
             cost={newCosts}
             price={price}
             category= {categorie}

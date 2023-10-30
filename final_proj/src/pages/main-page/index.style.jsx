@@ -74,10 +74,16 @@ export const Wrapper = styled.div `
     
     
    
-  
-   
-
-
 
   
  `;
+
+ export const LogedInUser = styled.div`
+    
+ margin-top: 40px;
+ color: white;
+ margin-left: 40px;
+
+
+
+ ` 

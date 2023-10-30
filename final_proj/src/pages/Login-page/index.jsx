@@ -5,30 +5,67 @@ import { Btn } from "../../components/menu-buttons/index.style";
 import { useNavigate } from "react-router-dom";
 import { ItemInput } from "../../components/cost-form/index.style";
 import { InputButtonWrapper } from "./index.style";
+import { useDispatch } from "react-redux";
+import { loginWithGoogle} from "../../redux/authSlice";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { getUser } from "../../redux/authSelectors";
+import { useEffect, useState } from "react";
+import { signInUser } from "../../redux/authSlice";
+ 
 
 export const LoginPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = useSelector(getUser);
+  const [isRegister, setRegister] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password,setPassword] = useState("");
 
-  const LoginClick = () => {
-    navigate("/main");
+ useEffect(()=> {
+  if (user) {
+    navigate("/main")
+  }
+ }, [user, navigate]);
+
+  const handleLoginClick = () => {
+    dispatch(signInUser({email, password}))
+    console.log({email, password})
   };
 
-  const RegisterAccountClick = () => {
+  const handleRegisterAccountClick = () => {
     navigate("/CreateAccount");
   };
+
+const handleGoogleLogin = () => {
+  dispatch(loginWithGoogle());
+};
+  
+const changeHandler = ({target}) => {
+  const setters = {
+    email: setEmail,
+    password: setPassword,
+    
+
+  };
+  setters[target.name](target.value)
+
+
+  };
+
+
 
   return (
     <Wrapper>
       <LoginWrapper>
         <InputButtonWrapper>
-          <ItemInput placeholder="Username" />
-          <ItemInput type="password" placeholder="Password" />
+          <ItemInput placeholder="Username" name="email" value={email} onChange={changeHandler}/>
+          <ItemInput type="password" placeholder="Password" name="password" value={password} onChange={changeHandler} />
         </InputButtonWrapper>
 
         <ButtonWrapper>
-          <Btn onClick={LoginClick}>Login</Btn>
-          <Btn>Sign in with Google</Btn>
-          <Btn onClick={RegisterAccountClick}>Register new account</Btn>
+          <Btn onClick={handleLoginClick}>Login</Btn>
+          <Btn onClick={handleGoogleLogin}>Sign in with Google</Btn>
+          <Btn onClick={handleRegisterAccountClick}>Register new account</Btn>
         </ButtonWrapper>
       </LoginWrapper>
     </Wrapper>
