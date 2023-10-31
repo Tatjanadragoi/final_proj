@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+import { FILTER_TYPE } from '../constants';
 
  const expensesSlice = createSlice ({
     name: 'expenses',
@@ -7,14 +7,14 @@ import { createSlice } from '@reduxjs/toolkit';
         expenses: [],
         isLoading: false,
         isEdditing: false,
+        chosenExpensesId: null,
+        filterType: FILTER_TYPE.ALL
         
-        
+       
     },
     reducers: {
 
-       
-
-        addExpenses (state, action) {
+       addExpenses (state, action) {
                 state.expenses.push(action.payload)
             },
 
@@ -24,8 +24,6 @@ import { createSlice } from '@reduxjs/toolkit';
     
             },
 
-
-
         editExpenses(state, action) {
 
             const editExpenses = state.expenses.find(({id}) => id === action.payload.id);
@@ -33,12 +31,22 @@ import { createSlice } from '@reduxjs/toolkit';
             editExpenses.isEdditing = !editExpenses.isEdditing;
             editExpenses.expenses = action.payload.expenses;
 
+            },
 
-        }
+        setSingleExpenseId(state,action) {
+            state.chosenExpensesId= action.payload;
+        },
+
+        setFilterType (state,action) {
+            state.filterType = action.payload;
+           
+        },
+
+
     }
 })
 
 
-export const {addExpenses, deleteExpenses, editExpenses} = expensesSlice.actions;
+export const {addExpenses, deleteExpenses, editExpenses, setSingleExpenseId, setFilterType} = expensesSlice.actions;
 
 export default expensesSlice.reducer;

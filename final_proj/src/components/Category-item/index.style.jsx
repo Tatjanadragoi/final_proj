@@ -20,18 +20,11 @@ export const AddedCategoriesWrapper = styled.div`
     align-items: flex-end;
     margin-left: 5%; 
     
-   
-
-    
-    
-
- `   
+`   
 
 
  export const AddedCategories = styled.div`
     
-  
- 
     margin-left: 18%;
     background-image: linear-gradient(144deg,#2c3dbe, #abbdd4 50%,#b2dce9);
     display: grid;
@@ -48,14 +41,9 @@ export const AddedCategoriesWrapper = styled.div`
     color:black;
     font-weight: 700;
     font-size: 19px;
-   
-
-
 `   
 export const EditInput = styled.input`
         
-        
-    /* margin-left: 18%; */
     background-image: linear-gradient(144deg,#cad6ce, #b7d6b3 50%,#ebeee8);
     font-size: 14px;
     border-radius: 10px;
@@ -68,5 +56,4 @@ export const EditInput = styled.input`
     font-size: 19px;
     background-color:green;
 
-
-            `      
+ `      

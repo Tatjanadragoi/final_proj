@@ -95,8 +95,5 @@ extraReducers: {
 });
 
 
-
-
-
 export const {setUser} = authSlice.actions
 export default authSlice.reducer;

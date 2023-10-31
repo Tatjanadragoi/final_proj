@@ -28,18 +28,9 @@ import { createSlice } from '@reduxjs/toolkit';
             categoryToEdit.categories = action.payload.categories;
           },
 
-        // editCategory(state, action) {
-        //     state.categories = 
-
-        // },
-
-
-
-        
     }
 })
 
 export const { addCategory, deleteCategory, editCategory} = costSlice.actions;
 export const {addCost, deleteCost, editCost} = costSlice.actions;
-
 export default costSlice.reducer;

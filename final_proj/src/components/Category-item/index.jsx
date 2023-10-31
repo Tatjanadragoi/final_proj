@@ -3,7 +3,6 @@ import { AddedCategoriesWrapper, AddedCategories } from "./index.style";
 import { Btn } from "../menu-buttons/index.style";
 import { LeftSide } from "../../pages/main-page/index.style";
 import { Wrapper } from "./index.style";
-import { ItemInput } from "../cost-form/index.style";
 import { EditInput } from "./index.style";
 import { Modal } from "../modal";
 import { ModalButton } from "../cost-item/index.style";
@@ -27,6 +26,8 @@ export const AllCategories = ({
 
   const handleOpenModal = () => setShowModal(true);
 
+  console.log(costCategorie);
+
   return (
     <LeftSide>
       <Wrapper>
@@ -43,10 +44,10 @@ export const AllCategories = ({
                 onChange={handleCategorieChange}
               />
             ) : (
-              children
+              <p>{costCategorie}</p>
             )}
           </AddedCategories>
-          <Btn onClick={() => onEditClick(id, costCategorie)}>
+          <Btn onClick={() => onEditClick(id, categorie, isEdditing)}>
             {isEdditing ? "Ok" : "Edit"}
           </Btn>
           <Btn onClick={handleOpenModal}>Delete</Btn>

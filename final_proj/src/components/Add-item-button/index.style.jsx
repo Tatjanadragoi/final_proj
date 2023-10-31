@@ -18,10 +18,7 @@ export const AddButton = styled.button`
             margin-left: 55%;
             
  
-  
-  
-  
-  &:active {
+ &:active {
     box-shadow: inset 2px 2px 10px white
   }
 

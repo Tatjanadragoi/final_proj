@@ -5,7 +5,7 @@ export const CategorySelect = styled.select`
     
             
             width: 10%;
-            color: rgb(76, 219, 19);
+            color: rgb(12, 17, 9);
             font-size: 16px;
             min-height: 32px;
             border-radius: 4px;
@@ -34,5 +34,4 @@ export const CategorySelect = styled.select`
             background: rgb(251, 251, 251);
             
                 
-
-            `
+`

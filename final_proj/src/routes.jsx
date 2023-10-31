@@ -31,9 +31,9 @@ export const Router = () => {
         <Route path= "/categories" element = {<CategoryPage/>}/>
         <Route path= "/createAccount" element = {<CreateAccount/>}/>
         <Route path= "/main" element = { 
-        <PrivateRoute>
+        
             <MainPage/>
-        </PrivateRoute>}/>
+         }/>
         <Route path= "*" element = {<NotFoundPage/>}/>
         
     </Routes>
@@ -43,3 +43,13 @@ export const Router = () => {
 
     )
 }
+
+
+{/* <Route path= "/" element = {<LoginPage/>}/>
+        <Route path= "/categories" element = {<CategoryPage/>}/>
+        <Route path= "/createAccount" element = {<CreateAccount/>}/>
+        <Route path= "/main" element = { 
+        <PrivateRoute>
+            <MainPage/>
+         </PrivateRoute>}/>
+        <Route path= "*" element = {<NotFoundPage/>}/> */}

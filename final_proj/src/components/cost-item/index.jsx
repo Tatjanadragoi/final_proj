@@ -1,23 +1,28 @@
 import React, { useState, memo } from "react";
-import { StyledCostList } from "./index.style";
-import { CostListBtn } from "./index.style";
-import { ItemInput } from "../cost-form/index.style";
+import { StyledCostList,ModalButton, ItemWrapper } from "./index.style";
+import { CostListBtn, EditInput } from "./index.style";
 import { Modal } from "../modal";
-import { ModalButton } from "./index.style";
-import { ItemWrapper } from "./index.style";
-import { getCategories } from "../../redux/appSelectors";
+
+
 
 export const CostItem = memo(
-  ({ children, id, onDelete, onEdit, isEdditing, cost, date, price, categorie }) => {
+  ({
+    children,
+    id,
+    onDelete,
+    onEditCost,
+    isEdditing,
+    cost,
+    date,
+    price,
+    categorie,
+  }) => {
     const [costText, setCostText] = useState(cost);
     const [costDate, setCostDate] = useState(date);
     const [costPrice, setCostPrice] = useState(price);
     const [showModal, setShowModal] = useState(false);
-    const [costCategorie, setCostCategorie] = useState(categorie)
+    const [costCategorie, setCostCategorie] = useState(categorie);
 
-    const handleCostChange = (event) => {
-      setCostText(event.target.value);
-    };
     const handleDateChange = (event) => {
       setCostDate(event.target.value);
     };
@@ -27,9 +32,9 @@ export const CostItem = memo(
     const handleCategorieChange = (event) => {
       setCostCategorie(event.target.value);
     };
-    
-
-
+    const handleCostChange = (event) => {
+      setCostText(event.target.value);
+    };
 
     const handleCloseModal = () => setShowModal(false);
 
@@ -37,7 +42,6 @@ export const CostItem = memo(
 
     return (
       <StyledCostList>
-        
         <Modal isOpen={showModal} onClose={handleCloseModal}>
           {" "}
           Delete cost?
@@ -47,20 +51,20 @@ export const CostItem = memo(
 
         <CostListBtn onClick={handleOpenModal}>Delete</CostListBtn>
 
-        <CostListBtn onClick={() => onEdit(id, costText, costDate, costPrice, costCategorie)}>
+        <CostListBtn
+          onClick={() =>
+            onEditCost(id, costText, costDate, costPrice, costCategorie)
+          }
+        >
           {isEdditing ? "Ok" : "Edit"}
         </CostListBtn>
 
         {isEdditing ? (
           <ItemWrapper>
-            <ItemInput value={costCategorie} onChange={handleCategorieChange}/>
-            <ItemInput value={cost} onChange={handleCostChange} />
-            <ItemInput
-              type="Date"
-              value={costDate}
-              onChange={handleDateChange}
-            />
-            <ItemInput value={costPrice} onChange={handlePriceChange} />
+            <EditInput value={categorie} onChange={handleCategorieChange} />
+            <EditInput type="Date" value={date} onChange={handleDateChange} />
+            <EditInput value={cost} onChange={handleCostChange} />
+            <EditInput value={price} onChange={handlePriceChange} />
           </ItemWrapper>
         ) : (
           children

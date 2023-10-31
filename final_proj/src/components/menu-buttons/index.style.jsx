@@ -1,12 +1,8 @@
-import styled from 'styled-components' 
-
-
+import styled from "styled-components";
 
 export const Btn = styled.button`
-   
-  
-  margin-top: 40px; 
-  background-image: linear-gradient(144deg,#3e337a, #a095ec 50%,#c7daec);
+  margin-top: 40px;
+  background-image: linear-gradient(144deg, #3e337a, #a095ec 50%, #c7daec);
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -19,19 +15,15 @@ export const Btn = styled.button`
   padding: 9px 15px;
   cursor: pointer;
   font-family: cursive;
- 
- 
-  
+
   &:active {
-    box-shadow: inset 2px 2px 10px lightblue
+    box-shadow: inset 2px 2px 10px lightblue;
   }
+`;
 
-`
-
-export const LogOutBtn = styled.button `
-  
-  margin-top: 180px; 
-  background-image: linear-gradient(144deg,#402fa0, #503bd8 50%,#c7daec);
+export const LogOutBtn = styled.button`
+  margin-top: 180px;
+  background-image: linear-gradient(144deg, #402fa0, #503bd8 50%, #c7daec);
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -44,12 +36,8 @@ export const LogOutBtn = styled.button `
   padding: 9px 15px;
   cursor: pointer;
   font-family: cursive;
- 
- 
-  
+
   &:active {
-    box-shadow: inset 2px 2px 10px lightblue
+    box-shadow: inset 2px 2px 10px lightblue;
   }
-
-
-`
+`;

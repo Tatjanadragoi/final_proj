@@ -8,8 +8,8 @@ import authReducer from './authSlice'
 export const store = configureStore({
     reducer: { costs: costsReducer,
         auth: authReducer,
-        expenses: expensesReducer
-        
+        expenses: expensesReducer,
+       
     }
 });
 
